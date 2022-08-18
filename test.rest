@@ -1,4 +1,8 @@
-GET http://localhost:5000/users
+GET http://localhost:5000/deck
+
+#####
+
+GET http://localhost:5000/deck/21a35aed-e26f-488e-8aef-7c8293931e4b
 
 ####
 
@@ -7,5 +11,35 @@ Content-Type: application/json
 
 {
     "type": "FULL",
+    "shuffled": false
+}
+
+####
+
+POST http://localhost:5000/deck
+Content-Type: application/json
+
+{
+    "type": "FULL",
+    "shuffled": true
+}
+
+####
+
+POST http://localhost:5000/deck
+Content-Type: application/json
+
+{
+    "type": "SHORT",
+    "shuffled": false
+}
+
+####
+
+POST http://localhost:5000/deck
+Content-Type: application/json
+
+{
+    "type": "SHORT",
     "shuffled": true
 }

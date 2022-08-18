@@ -1,10 +1,13 @@
 import express from "express";
-import {createNewDeck} from "../controllers/cardController.js";
+import {
+  createNewDeck,
+  getDeck,
+  getDecks,
+} from "../controllers/cardController.js";
 const router = express.Router();
 
-router
-  .route("/")
-  .get()
-  .post(createNewDeck)
+router.get("/:deckId", getDeck);
+router.get("/", getDecks);
+router.post("/", createNewDeck);
 
 export default router;

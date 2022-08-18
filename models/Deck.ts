@@ -1,17 +1,15 @@
 import mongoose from "mongoose";
-import {v4 as uuid } from "uuid"
 
 const deckSchema = new mongoose.Schema(
   {
     deckId: {
       type: String,
-      required: true,
-      default: uuid(),
+      required: true
     },
     type: {
       type: String,
       required: true,
-      enum: ['FULL', 'SHORT']
+      enum: ["FULL", "SHORT"],
     },
     shuffled: {
       type: Boolean,
@@ -19,8 +17,16 @@ const deckSchema = new mongoose.Schema(
     },
     remaining: {
       type: Number,
-      required: true
+      required: true,
     },
+    cards: [
+      {
+        value: String,
+        suit: String,
+        code: String,
+        _id: false,
+      },
+    ],
   },
   {
     timestamps: true,
