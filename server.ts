@@ -2,14 +2,14 @@ import express, {Express, Request, Response} from "express";
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 import deckRouter from "./routes/deckRouter.js"
-import { logEvents } from "./middleware/logger.js";
+import { logEvents,logger } from "./middleware/logger.js";
 dotenv.config();
 
 const app: Express = express();
 const PORT = process.env.PORT;
 
 
-
+app.use(logger);
 app.use(express.json());
 
 app.listen(PORT, () => {
@@ -32,3 +32,5 @@ app.listen(PORT, () => {
 });
 
 app.use('/deck', deckRouter);
+
+export default app;

@@ -4,7 +4,7 @@ const deckSchema = new mongoose.Schema(
   {
     deckId: {
       type: String,
-      required: true
+      required: true,
     },
     type: {
       type: String,
@@ -20,6 +20,14 @@ const deckSchema = new mongoose.Schema(
       required: true,
     },
     cards: [
+      {
+        value: String,
+        suit: String,
+        code: String,
+        _id: false,
+      },
+    ],
+    drawnCards: [
       {
         value: String,
         suit: String,

@@ -55,4 +55,28 @@ const getDecks = async (req: Request, res: Response) => {
   return res.status(200).json(decks);
 };
 
-export { createNewDeck, getDeck, getDecks };
+const drawCard = async (req: Request, res: Response) => {
+  const deck = await Deck.findOne({deckId: req.params.deckId});
+  if(!deck)
+    return res.status(400).json({message: 'deckId is not valid'});
+  
+  const { count } = req.query;
+
+  if (typeof count !== "string") {
+    // throw new ServerError("Query param 'url' has to be of type string", 400);
+  } else {
+    const cardsCount: number = +count;
+    const { cards } = deck;
+    const drawnCards = cards.splice(0, cardsCount);
+
+    //update cards 
+    deck.cards = cards;
+    deck.drawnCards.push(...drawnCards);
+    deck.save();
+
+    return res.status(200).json({ cards: [...drawnCards] });
+  }
+};
+
+
+export { createNewDeck, getDeck, getDecks, drawCard };
