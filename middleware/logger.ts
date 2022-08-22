@@ -6,7 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-import {Request, Response, NextFunction} from "express";
+import { Request, Response, NextFunction } from "express";
 
 export const logEvents = async (message: string, logFileName: string) => {
   const dateTime = format(new Date(), "yyyyMMdd\thh:mm:ss");

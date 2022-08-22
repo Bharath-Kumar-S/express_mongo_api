@@ -1,10 +1,6 @@
-type Deck = {
-  value: String;
-  suit: String;
-  code: String;
-}[];
+import { DeckCardEnum } from "../types/decks.types.js";
 
-export const deck: Deck = [
+export const deck: DeckCardEnum = [
   {
     value: "ACE",
     suit: "SPADES",
@@ -267,4 +263,4 @@ export const deck: Deck = [
   },
 ];
 
-export const shuffledDeck = () => [...deck].sort(() => Math.random() - 0.5); 
+export const shuffledDeck = () => [...deck].sort(() => Math.random() - 0.5);

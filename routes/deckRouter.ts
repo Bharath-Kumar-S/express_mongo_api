@@ -10,6 +10,6 @@ const router = express.Router();
 router.get("/:deckId", getDeck);
 router.get("/", getDecks);
 router.post("/", createNewDeck);
-router.post("/draw/:deckId", drawCard) 
+router.post("/draw/:deckId", drawCard);
 
 export default router;

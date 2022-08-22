@@ -2,7 +2,7 @@ GET http://localhost:5000/deck
 
 #####
 
-GET http://localhost:5000/deck/8f1967e0-faf6-4644-8eed-71e3cf15d790
+GET http://localhost:5000/deck/22833b92-4719-4c90-a351-e0f942863419
 
 ####
 
@@ -13,6 +13,7 @@ Content-Type: application/json
     "type": "FULL",
     "shuffled": false
 }
+
 
 ####
 
@@ -45,4 +46,4 @@ Content-Type: application/json
 }
 
 ####
-POST http://localhost:5000/deck/draw/32fe1d92-d938-4dbf-a386-8ea124b8c8eb?count=3
+POST http://localhost:5000/deck/draw/22833b92-4719-4c90-a351-e0f942863419?count=3

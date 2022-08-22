@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - mongo-compose-network
+
+  mongo-express:
+    container_name: mongo-express
+    restart: always
+    build: .
+    depends_on:
+      - mongodb
+    links:
+      - mongodb
+    networks:
+      - mongo-compose-network
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo-dev
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=pass
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=tribes
+    ports:
+      - '5000:5000'
+    volumes:
+      - mongo-data:/data/db
+    
+networks:
+  mongo-compose-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local
