@@ -1,5 +1,5 @@
 <p align="center">
-   <i><strong>Node TypeScript Express Mongo Katana 
+   <i><strong>Node TypeScript Express Mongo 
 </strong></i>
 <p>
 
