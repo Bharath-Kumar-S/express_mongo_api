@@ -3,6 +3,8 @@
 </strong></i>
 <p>
 
+[![Node.js CI](https://github.com/Bharath-Kumar-S/express_mongo_api/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/Bharath-Kumar-S/express_mongo_api/actions/workflows/node.js.yml)
+
 ### To Get Started
 
 #### Pre-requisites
