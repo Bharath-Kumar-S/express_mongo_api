@@ -10,7 +10,7 @@ const app: Express = express();
 const PORT = process.env.PORT;
 
 app.use(logger);
-app.use(express.json());
+// app.use(express.json());
 
 const appServer = app.listen(PORT, () => {
   console.log(
